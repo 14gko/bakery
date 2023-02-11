@@ -1,0 +1,16 @@
+.nav-container{
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: 2rem;
+
+    background-color: rgba(255, 255, 255, .8 );
+    border: solid 2px white;
+    border-radius: 5px;
+}
+
+.nav-container a, .user{
+    text-decoration: none;
+    color: rgba(206, 177, 128);
+    padding: min(1rem, 30vw);
+}
