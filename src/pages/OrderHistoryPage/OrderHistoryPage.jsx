@@ -1,4 +1,5 @@
 import { checkToken } from "../../utilities/users-service"
+import './OrderHistoryPage.css'
 
 export default function OrderHistoryPage() {
 
