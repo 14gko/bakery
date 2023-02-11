@@ -1,0 +1,7 @@
+.MenuList{
+    display: flex;
+    justify-content: center;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

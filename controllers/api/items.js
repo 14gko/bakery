@@ -1,4 +1,3 @@
-const item = require('../../models/item');
 const Item = require('../../models/item');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
 
 async function index(req, res){
     const items = await Item.find({}).sort('name').populate('category').exec();
-    item.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+    items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
     res.json(items);
 }
 

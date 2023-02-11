@@ -2,15 +2,15 @@
     display: flex;
     justify-content: space-evenly;
 
-    font-size: 2rem;
+    font-size: 2.5rem;
 
-    background-color: rgba(255, 255, 255, .8 );
-    border: solid 2px white;
+    background-color: rgba(255, 255, 255);
+    border: solid 3px black;
     border-radius: 5px;
 }
 
 .nav-container a, .user{
     text-decoration: none;
-    color: rgba(206, 177, 128);
+    color: black;
     padding: min(1rem, 30vw);
 }

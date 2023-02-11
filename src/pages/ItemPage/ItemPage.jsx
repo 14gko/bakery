@@ -1,36 +1,51 @@
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api'
 import * as ordersAPI from '../../utilities/orders-api'
+import CategoryList from '../../components/CategoryList/CategoryList'
 import MenuList from '../../components/MenuList/MenuList';
 import './ItemPage.css';
 
 export default function ItemPage() {
     const [menuItems, setMenuItems] = useState([]);
     const [activeCat, setActiveCat] = useState('');
-    const [cart, setCart] = useState(null);
+    const [cart, setCart] = useState(null)
     const categoriesRef = useRef([]);
 
     useEffect(function () {
         async function getItems() {
-          const items = await itemsAPI.getAll();
-          categoriesRef.current = items.reduce((cats, item) => {
-            const cat = item.category.name;
-            return cats.includes(cat) ? cats : [...cats, cat]
-          }, []);
-          setActiveCat(categoriesRef.current[1]);
-          setMenuItems(items);
+            const items = await itemsAPI.getAll();
+            categoriesRef.current = items.reduce((cats, item) => {
+                const cat = item.category.name;
+                return cats.includes(cat) ? cats : [...cats, cat]
+            }, []);
+            setActiveCat(categoriesRef.current[0]);
+            setMenuItems(items);
         }
         getItems();
-    
+
         async function getCart() {
-          const cart = await ordersAPI.getCart()
-          setCart(cart)
+            const cart = await ordersAPI.getCart()
+            setCart(cart)
         }
         getCart()
-    
-      }, []);
+    }, []);
 
-    return(
-        <MenuList menuItems={menuItems.filter(item => item.category.name === activeCat)}/>
+    async function handleAddToOrder(itemId) {
+        const cart = await ordersAPI.addItemToCart(itemId)
+        setCart(cart)
+      }
+
+    return (
+        <main>
+            <CategoryList
+                categories={categoriesRef.current}
+                activeCat={activeCat}
+                setActiveCat={setActiveCat}
+            />
+            <MenuList
+                menuItems={menuItems.filter(item => item.category.name === activeCat)}
+                handleAddToOrder={handleAddToOrder} />
+        </main>
+
     )
 }

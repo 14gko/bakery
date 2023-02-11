@@ -1,0 +1,23 @@
+.category-list{
+    display: flex;
+    justify-content: space-evenly
+}
+
+li{
+    font-size: 2rem;
+
+    color: black;
+    background-color: white;
+    padding-inline: 1.5rem;
+
+    border: solid 3px black;
+    border-radius: 6px;
+
+    list-style: none;
+    cursor: pointer;
+}
+
+li:hover{
+    font-weight: bolder;
+    box-shadow: 0 0 2px black;
+}

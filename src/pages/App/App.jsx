@@ -12,7 +12,6 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-
   return (
     <main className="App">
       <NavBar user={user} setUser={setUser} />
@@ -20,8 +19,8 @@ export default function App() {
         <>
           <Routes>
             <Route path='/bakery' element={<HomePage/>} />
-            <Route path='/bakery/items' element={<ItemPage/>}/>
-            <Route path='/orders/cart' element={<ShoppingCartPage />} />
+            <Route path='/bakery/items' element={<ItemPage user={user} setUser={setUser} />}/>
+            <Route path='/cart' element={<ShoppingCartPage />} />
             <Route path='/orders' element={<OrderHistoryPage />} />
           </Routes>
         </>

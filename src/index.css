@@ -1,7 +1,7 @@
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
-  --yellow-1: #FFF380;
+  --yellow-1: rgba(255, 216, 1);
   --brown-1: rgba(206, 177, 128);
 }
 
@@ -17,7 +17,7 @@ body {
   background-color: var(--yellow-1);
   padding: 2vmin;
   height: 100vh;
-  color: var(--brown-1);
+  color: var(--yellow-1);
 }
 
 #root {

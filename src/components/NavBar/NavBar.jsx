@@ -18,7 +18,7 @@ export default function NavBar({ user, setUser }) {
         <nav className="nav-container">
             <Link to="/bakery" className="link1">Home</Link>
             <Link to="/bakery/items">Menu</Link>
-            <Link to="/orders/cart">Shopping Cart</Link>
+            <Link to="/cart">Shopping Cart</Link>
             <Link to="/orders">Orders</Link>
             {user ?
                 <>
