@@ -3,12 +3,14 @@ const router = express.Router();
 const ordersCtrl = require('../../controllers/api/orders');
 
 // GET /api/cart
-router.get('/', ordersCtrl.cart);
+router.get('/cart', ordersCtrl.cart);
 // POST /api/cart/items/:id
-router.post('/items/:id', ordersCtrl.addToCart);
+router.post('/cart/items/:id', ordersCtrl.addToCart);
 // POST /api/cart/checkout
-router.post('/checkout', ordersCtrl.checkout);
+router.post('/cart/checkout', ordersCtrl.checkout);
 // POST /api/cart/qty
-router.put('/qty', ordersCtrl.setItemQtyInCart);
+router.put('/cart/qty', ordersCtrl.setItemQtyInCart);
+router.get('/orders', ordersCtrl.orders);
+// router.post('/orders/:id', ordersCtrl.addToOrders);
 
 module.exports = router;

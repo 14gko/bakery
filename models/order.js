@@ -72,4 +72,19 @@ orderSchema.methods.setItemQty = function(itemId, newQty) {
     return cart.save()
 }
 
+// orderSchema.statics.getOrders = function(userId) {
+//     return this.findOneAndUpdate(
+//         { user: userId, isPaid: true },
+//         { user: userId },
+//         { upsert: true, new: true }
+//     )
+// }
+
+// orderSchema.methods.addOrderToHistory = async function(orderId){
+//     const orders = this
+//     const order = await mongoose.model('Order').findById(orderId)
+//     orders.push({order})
+    
+// }
+
 module.exports = mongoose.model('Order', orderSchema)
