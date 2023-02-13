@@ -5,7 +5,7 @@ import PlacedOrders from '../../components/PlacedOrders/PlacedOrders'
 import './OrderHistoryPage.css'
 
 export default function OrderHistoryPage() {
-    const [orders, setOrders] = useState(null);
+    const [orders, setOrders] = useState([]);
 
     useEffect(function () {
         async function getOrders() {
