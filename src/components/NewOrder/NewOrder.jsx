@@ -1,7 +1,7 @@
-// import './NewOrder.css';
+import './NewOrder.css';
 import LineItem from '../../components/LineItem/LineItem'
 
-export default function NewOrder({ order }) {
+export default function NewOrder({ order, handleCheckout, handleChangeQty }) {
     if (!order) return null;
 
     const lineItems = order.lineItems.map(item =>
@@ -9,41 +9,34 @@ export default function NewOrder({ order }) {
             lineItem={item}
             isPaid={order.isPaid}
             key={item._id}
+            handleChangeQty={handleChangeQty}
         />
-        )
+    )
 
     return (
         <div className='new-order'>
-            <div>
-                {order.isPaid ?
-                    <span>ORDER {order.orderId}</span>
-                    :
-                    <span>New Order</span>
-                }
-                <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
+            <div className="lineitem-grid">
+                <div className="lineitem-container">
+                    {lineItems.length ?
+                        <>
+                            <div id='order-id'>Order#: {order._id}</div>
+                            {lineItems}
+                            <section className="total">
+                                <div>
+                                    Total: ${order.orderTotal.toFixed(2)}
+                                </div>
+                                <button
+                                    className='checkout-button right-align'
+                                    onClick={handleCheckout}
+                                    disabled={!lineItems.length}
+                                >CHECKOUT</button>
+                            </section>
+                        </>
+                        :
+                        <div>Your Shopping Cart is Empty</div>
+                    }
+                </div>
             </div>
-            <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
-        {lineItems.length ?
-          <>
-            {lineItems}
-            <section className="total">
-              {order.isPaid ?
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
-                :
-                <button
-                  className="btn-sm"
-                //   onClick={handleCheckout}
-                  disabled={!lineItems.length}
-                >CHECKOUT</button>
-              }
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
-            </section>
-          </>
-          :
-          <div className="hungry">Hungry?</div>
-        }
-      </div>
-    </div>
+        </div>
     )
 }

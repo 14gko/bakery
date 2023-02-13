@@ -1,0 +1,58 @@
+.page-title{
+    font-size: clamp(2rem, 5vw, 5rem);
+}
+
+.lineitem-container{
+    display: grid;
+}
+
+.lineitem-grid{
+    border: solid 4px black;
+    border-radius: 10px;
+    margin-inline: 2vw;
+}
+
+.total{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    padding-inline: 1rem;
+    
+    font-size: 2rem;
+    border-radius: 0 0 5px 5px;
+}
+
+#order-id{
+    background-color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: .3rem;
+
+    border-radius: 5px 5px 0 0; 
+    border-bottom: solid 3px black;
+}
+
+/* use for order hist */
+/* .order-date{
+    float: right;
+    padding-inline: .3rem;
+    color: black;
+    font-size: 1.8rem;
+} */
+
+.right-align{
+    margin: 1rem 0;
+    justify-self: right;
+    align-items: center;
+}
+
+.checkout-button{
+    background-color: var(--yellow-1);
+    color: black;
+    padding: .2rem .5rem;
+    border: solid 2px black;
+    font-size: 1.3rem;
+    font-family: 'Nanum Pen Script', cursive;
+}

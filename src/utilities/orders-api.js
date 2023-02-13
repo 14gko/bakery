@@ -1,6 +1,6 @@
 import sendRequest from './send-request';
 
-const BASE_URL = '/api/orders';
+const BASE_URL = '/api';
 
 // Retrieve an unpaid order for the logged in user
 export function getCart() {
@@ -24,4 +24,12 @@ export function setItemQtyInCart(itemId, newQty) {
 export function checkout() {
   // Changing data on the server, so make it a POST request
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
+}
+
+export function getOrders(){
+  return sendRequest(`${BASE_URL}/orders`);
+}
+
+export function addOrderToHistory(orderId){
+  return sendRequest(`${BASE_URL}/orders/${orderId}`, 'POST');
 }

@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const ordersCtrl = require('../../controllers/api/cart');
+const ordersCtrl = require('../../controllers/api/orders');
 
-// GET /api/orders/cart
+// GET /api/cart
 router.get('/', ordersCtrl.cart);
-// POST /api/orders/cart/items/:id
+// POST /api/cart/items/:id
 router.post('/items/:id', ordersCtrl.addToCart);
-// POST /api/orders/cart/checkout
+// POST /api/cart/checkout
 router.post('/checkout', ordersCtrl.checkout);
-// POST /api/orders/cart/qty
+// POST /api/cart/qty
 router.put('/qty', ordersCtrl.setItemQtyInCart);
 
 module.exports = router;

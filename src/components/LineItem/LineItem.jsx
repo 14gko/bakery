@@ -1,23 +1,22 @@
-// import './LineItem.css';
+import './LineItem.css';
 
-export default function LineItem({lineItem, isPaid}){
+export default function LineItem({lineItem, isPaid, handleChangeQty}){
     return (
         <div className="LineItem">
-          <div>{lineItem.item.emoji}</div>
+          <img src={`${lineItem.item.image}`} alt="" className='cart-img'/>
           <div>
-            <span>{lineItem.item.name}</span>
-            <span>{lineItem.item.price.toFixed(2)}</span>
+            <span id='item-name'>{lineItem.item.name}</span>
           </div>
-          <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
+          <div className="price-qty">
+            <div><span>{lineItem.item.price.toFixed(2)}</span></div>
             {!isPaid &&
-              <button>−</button>
+              <button className='qty-btn' onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}>−</button>
               }
-            <span>{lineItem.qty}</span>
+            <span id="qty">{lineItem.qty}</span>
             {!isPaid &&
-              <button>+</button>
+              <button className='qty-btn' onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}>+</button>
             }
           </div>
-          <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
         </div>
       );
 }

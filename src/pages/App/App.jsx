@@ -20,8 +20,8 @@ export default function App() {
           <Routes>
             <Route path='/bakery' element={<HomePage/>} />
             <Route path='/bakery/items' element={<ItemPage user={user} setUser={setUser} />}/>
-            <Route path='/cart' element={<ShoppingCartPage />} />
-            <Route path='/orders' element={<OrderHistoryPage />} />
+            <Route path='/bakery/cart' element={<ShoppingCartPage />} />
+            <Route path='/bakery/orders' element={<OrderHistoryPage />} />
           </Routes>
         </>
         :

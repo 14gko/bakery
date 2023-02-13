@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate} from 'react-router-dom';
 import * as itemsAPI from '../../utilities/items-api'
 import * as ordersAPI from '../../utilities/orders-api'
 import CategoryList from '../../components/CategoryList/CategoryList'
@@ -10,6 +11,7 @@ export default function ItemPage() {
     const [activeCat, setActiveCat] = useState('');
     const [cart, setCart] = useState(null)
     const categoriesRef = useRef([]);
+    const navigate = useNavigate();
 
     useEffect(function () {
         async function getItems() {
@@ -33,6 +35,7 @@ export default function ItemPage() {
     async function handleAddToOrder(itemId) {
         const cart = await ordersAPI.addItemToCart(itemId)
         setCart(cart)
+        navigate('/bakery/cart');
       }
 
     return (
