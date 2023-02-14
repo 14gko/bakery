@@ -1,7 +1,7 @@
 import './NewOrder.css';
 import LineItem from '../../components/LineItem/LineItem'
 
-export default function NewOrder({ order, handleCheckout, handleChangeQty }) {
+export default function NewOrder({ order, handleCheckout, handleChangeQty, handleRemoveItem }) {
     if (!order) return null;
 
     const lineItems = order.lineItems.map(item =>
@@ -10,6 +10,7 @@ export default function NewOrder({ order, handleCheckout, handleChangeQty }) {
             isPaid={order.isPaid}
             key={item._id}
             handleChangeQty={handleChangeQty}
+            handleRemoveItem={handleRemoveItem}
         />
     )
 

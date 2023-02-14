@@ -5,6 +5,7 @@ module.exports = {
   cart,
   addToCart,
   setItemQtyInCart,
+  removeFromCart,
   checkout,
   orders,
   // addToOrders,
@@ -20,6 +21,12 @@ async function cart(req, res) {
 async function addToCart(req, res) {
   const cart = await Order.getCart(req.user._id)
   await cart.addItemToCart(req.params.id)
+  res.json(cart)
+}
+
+async function removeFromCart(req, res){
+  const cart = await Order.getCart(req.user._id)
+  await cart.removeItemFromCart(req.params.id)
   res.json(cart)
 }
 

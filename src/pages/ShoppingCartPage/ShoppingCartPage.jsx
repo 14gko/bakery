@@ -17,6 +17,11 @@ export default function ShoppingCartPage() {
 
     }, []);
 
+    async function handleRemoveItem(itemId){
+        const cart = await ordersAPI.removeItemFromCart(itemId)
+        setCart(cart)
+    }
+
     async function handleChangeQty(itemId, newQty){
         const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
         setCart(updatedCart);
@@ -30,7 +35,7 @@ export default function ShoppingCartPage() {
     return (
         <>
             <h1 className='page-title'>Shopping Cart</h1>
-            <NewOrder order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} />
+            <NewOrder order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} handleRemoveItem={handleRemoveItem} />
         </>
 
     )

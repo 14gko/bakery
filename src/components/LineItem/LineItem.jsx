@@ -1,6 +1,6 @@
 import './LineItem.css';
 
-export default function LineItem({lineItem, isPaid, handleChangeQty}){
+export default function LineItem({lineItem, isPaid, handleChangeQty, handleRemoveItem}){
     return (
         <div className="LineItem">
           <img src={`${lineItem.item.image}`} alt="" className='cart-img'/>
@@ -16,6 +16,7 @@ export default function LineItem({lineItem, isPaid, handleChangeQty}){
             {!isPaid &&
               <button className='qty-btn' onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}>+</button>
             }
+            <button onClick={() => handleRemoveItem(lineItem.item._id)}>x</button>
           </div>
         </div>
       );
