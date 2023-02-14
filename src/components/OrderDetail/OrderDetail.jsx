@@ -1,21 +1,29 @@
 import './OrderDetail.css'
 
-export default function OrderDetail({orders, activeOrder}){
+export default function OrderDetail({ orders, activeOrder }) {
     const order = orders.filter(order => order.orderId === activeOrder.orderId)
-    const lineItems = order[0].lineItems.map(item =>
+    console.log(order)
+    const lineItems = async () => { await order[0].lineItems.item.map(item =>
+        {return(
         <li>
-            {item.item.name}
+            {item.name}
             {item.qty}
         </li>
-        )
-    console.log(order[0].lineItems)
-    console.log(order)
-    return(
-        <div>
-            <hr />
-            <h1>Order#:{order[0].orderId}</h1>
-            <div>{lineItems}</div>
+        )}
+    )}
 
-        </div>
+    return (
+        <>
+        {
+            order.length === 0 ?
+                <h1>Loading...</h1>
+                :
+                <>
+                    <hr />
+                    <h1>Order#:{order[0].orderId}</h1>
+                    <div>{lineItems}</div>
+                </>
+        }
+        </>
     )
 }

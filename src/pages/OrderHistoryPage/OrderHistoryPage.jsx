@@ -15,7 +15,10 @@ export default function OrderHistoryPage() {
             const orders = await ordersAPI.getOrders()
             // const selectedOrder = orders.find(order => order.orderId === )
             setOrders(orders);
+            console.log(orders)
             setActiveOrder(orders[0]);
+            // console.log('hello world')
+            // ordersAPI.getOrders().then(res => console.log(res))
         }
         getOrders()
     }, []);
