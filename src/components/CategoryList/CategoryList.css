@@ -19,5 +19,5 @@ li{
 
 li:hover{
     font-weight: bolder;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 1.5px black;
 }

@@ -1,54 +1,38 @@
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
-  --yellow-1: rgba(255, 216, 1);
-  --brown-1: rgba(206, 177, 128);
+  --blue-1: rgba(35, 57, 93);
+  --blue-2: rgba(25, 40, 65);
+  --blue-3: rgba(21, 34, 56);
+  --black-1: rgba(0 ,0 ,0);
+  --main-font: 'Lato', sans-serif;
+  /* --font-size:  */
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
+.page-title{
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 2.5vh 0;
+}
+
 body {
   margin: 0;
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--yellow-1);
-  padding: 2vmin;
+  background-color: var(--blue-3);
   height: 100vh;
-  color: black;
+  color: var(--blue-3);
 }
 
 #root {
   height: 100%;
 }
 
-.align-ctr {
-  text-align: center;
-}
 
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
 
 .scroll-y {
   overflow-y: scroll;
@@ -84,11 +68,11 @@ p.error-message {
 }
 
 
-form {
+/* form {
   display: grid;
   grid-template-columns: 10vw;
   gap: 1vw;
-}
+} */
 
 label {
   font-size: 2rem;
@@ -101,15 +85,15 @@ input {
   padding: 1vmin;
   font-size: 2vmin;
   color: var(--brown-1);
-  border: .1vmin solid var(--brown-1);
+  border: .1vmin solid var(--blue-3);
   border-radius: .5vmin;
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
-input:focus {
+/* input:focus {
   border-color: var(--brown-1);
-}
+} */
 
 button, a.button {
   color: var(--brown-1);
@@ -141,11 +125,11 @@ button:disabled, form:invalid button[type="submit"] {
   border-radius: 5px;
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
   grid-column: span 2;
   color: white;
   border: solid 1px var(--brown-1);
   background-color: var(--brown-1);
   margin-inline: 11vw 10vw;
 
-}
+} */

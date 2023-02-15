@@ -53,7 +53,7 @@ orderSchema.methods.addItemToCart = async function(itemId) {
     const cart = this
     const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId))
     if (lineItem) {
-        lineItem.qty += 1
+        lineItem.qty += 1;
     } else {
         const item = await mongoose.model('Item').findById(itemId)
         cart.lineItems.push({ item })

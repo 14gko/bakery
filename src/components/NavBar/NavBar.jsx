@@ -22,7 +22,6 @@ export default function NavBar({ user, setUser }) {
             <Link to="/bakery/orders">Orders</Link>
             {user ?
                 <>
-                   <span className="user">Welcome, {user.name}</span>
                     <Link to="" onClick={handleLogOut}>Log Out</Link>
                 </>
                 :

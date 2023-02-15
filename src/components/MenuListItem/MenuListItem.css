@@ -1,28 +1,32 @@
-.card{
-    font-size: 2rem;
+.MenuListItem{
+    text-decoration: none;
+    color: var(--blue-1);
+    width: 30vw;
+}
+
+/* .card{
+    font-size: 1.3rem;
     color: black;
     background-color: white;
     width: 20rem;
     height: 20rem;
     text-decoration: none;
 
-    border-radius: 20px;
-    border: solid 5px black;
-}
+    border-radius: 3px;
+} */
 
 .card:hover{
-    box-shadow: 0px 3px 10px #222222;
+    /* box-shadow: 0px 0px 8px rgb(126, 108, 8); */
 }
 
 .image-container{
-    border: solid 3px black;
     border-radius: 50%;
-    margin: 1rem 4.6rem;
-    width: 10rem;
-    height: 10rem;
+    /* margin: 1rem 4.6rem 1.5rem 4.6rem;
+    width: 100%;
+    height: 100%; */
 }
 
-img{
-    margin: .5rem 0rem 0 .1rem;
-    width: 8rem;
+.item-img{
+    object-fit: cover;
+    height: 20vw;
 }

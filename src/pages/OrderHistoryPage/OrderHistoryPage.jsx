@@ -35,10 +35,14 @@ export default function OrderHistoryPage() {
     }
 
     return (
-        <>
+        <div>
             <h1 className="page-title">Order History</h1>
+            <div className='OrderHistory'>
             <PlacedOrders orders={orders} activeOrder={activeOrder} setActiveOrder={setActiveOrder}/>
+            <aside>
             <OrderDetail orders={orders} activeOrder={activeOrder}/>
-        </>
+            </aside>
+            </div>
+        </div>
     )
 }

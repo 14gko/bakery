@@ -1,22 +1,80 @@
-import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
 import * as itemsAPI from '../../utilities/items-api'
 import MenuListItem from '../../components/MenuListItem/MenuListItem'
+import Select from "react-select";
 import './ItemDetail.css'
 
-export default function ItemDetail({menuItems}){
+export default function ItemDetail({ menuItems, handleAddToOrder }) {
     const [item, setItem] = useState('')
-    const {id} = useParams();
-    useEffect(function(){
-        menuItems.forEach( item => {
-            if (item._id === id){
+    const [selectedSize, setSelectedSize] = useState('');
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    useEffect(function () {
+        menuItems.forEach(item => {
+            if (item._id === id) {
                 setItem(item);
-            }})
-    }, [])
+            }
+        })
+    })
+
+    // const handleChange = (selectedOption) => {
+    //     item.size = selectedOption;
+    // }
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+    //     const item = {
+    //         ...item,
+    //         size: selectedSize.value,
+    //     }
+    //     console.log('hi', item.size)
+    //     setItem(formData)
+    // }
+    const handleChange = (selectedOption) => {
+        setSelectedSize(selectedOption)
+        // console.log('hi', selectedOption)
+    }
+
+    // console.log(selectedSize)
+
+    // async function handleAddToOrder(itemId) {
+    //     const cart = await ordersAPI.addItemToCart(itemId)
+    //     setCart(cart)
+    //     navigate('/bakery/cart');
+    //   }
     // ask how to find the item
-    return(
-        <div>
-            <img src={`${item.image}`} alt="" />
+    // (selectedOption) => setSelectedSize(selectedOption)
+    console.log(item.category)
+    return (
+        <div className='item-det-container'>
+            <div className="img-container">
+                <img className="detail-img" src={`${item.image}`} alt="" />
+            </div>
+            <div className='item-det'>
+                <h1 className='item-name'>{item.name}</h1>
+                <div className='price-avail'>
+                    <div className='space-between'>Price:<span>${item.price}</span></div>
+                    {item.availability ?
+                        <div className='space-between'>Availability: <span>In Stock</span></div>
+                        :
+                        <div className='space-between'>Availability: <span>Out of Stock</span></div>
+                    }
+                </div>
+                <div>
+                    <form>
+                        {/* {item.category.name === 'Cakes' ?  */}
+                        <Select className='form-ele' name="size" options={item.size} onChange={handleChange} />
+                        {/* : */}
+                        <br/>
+                        {/* } */}
+                        <button className='btn-detail' onClick={() => handleAddToOrder(item._id)}>Add To Cart</button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

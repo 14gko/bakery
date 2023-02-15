@@ -5,11 +5,11 @@ export default function MenuListItem({menuItem, handleAddToOrder}){
     return(
         <Link to={`/bakery/items/${menuItem._id}`} className="MenuListItem card">
             <div className='image-container'>
-                <img src={`${menuItem.image}`} alt="" />
+                <img className='card-img-top item-img responsive-img' src={`${menuItem.image}`} alt="" />
             </div>
-            <div className="name">{menuItem.name}</div>
-            <div> {menuItem.price}</div>
-            <button onClick={() => handleAddToOrder(menuItem._id)}>ADD</button>
+            <div className="card-title">{menuItem.name}</div>
+            <div className="card-text">Price: ${menuItem.price}</div>
+            {/* <button onClick={() => handleAddToOrder(menuItem._id)}>ADD</button> */}
         </Link>
     );
 }

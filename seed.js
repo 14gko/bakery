@@ -18,30 +18,18 @@ const Item = require('./models/item');
     await Item.deleteMany({});
     const items = await Item.create([
         //cakes 
-        {name: 'Chocolate Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/3610/iHGTWK.png', category: categories[0], price: 5.95},
-        {name: 'Chocolate Cream Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img922/3418/fHEwyh.png', category: categories[0], price: 5.95},
-        {name: 'Chocolate Layer Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/4435/sFcMoS.png', category: categories[0], price: 5.95},
-        {name: 'Chocolate Mousse Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img922/5494/N1OXuV.png', category: categories[0], price: 5.95},
-        {name: 'Espresso Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/3759/onkVBw.png', category: categories[0], price: 5.95},
+        {name: 'Chocolate Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/9853/bTSP0i.jpg', category: categories[0], price: 5.95},
+        {name: 'Chocolate Cream Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img923/9716/EMaYq3.png', category: categories[0], price: 5.95},
+        {name: 'Espresso Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/7430/wEU1Kl.jpg', category: categories[0], price: 5.95},
 
-        {name: 'Fresh Cream Fruit Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/9982/XvEipo.png', category: categories[0], price: 5.95},
-        {name: 'Matcha Espresso Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/4378/CHugeO.png', category: categories[0], price: 5.95},
-        {name: 'Matcha Layer Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img922/7720/Q1xp5E.png', category: categories[0], price: 5.95},
-        {name: 'Matcha Mousse Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/4192/Xf1dLT.png', category: categories[0], price: 5.95},
-        {name: 'Orange Citrus Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/5342/vCBb0A.png', category: categories[0], price: 5.95},
+        {name: 'Fresh Cream Fruit Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img922/8030/BtPoeE.jpg', category: categories[0], price: 5.95},
+        {name: 'Green Tea Chiffon Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/7955/bOmSs9.jpg', category: categories[0], price: 5.95},
         
-        {name: 'Peach Cream Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/212/4TJ34Q.png', category: categories[0], price: 5.95},
-        {name: 'Raspberry Mousse Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/962/EwktvS.png', category: categories[0], price: 5.95},
-        {name: 'Strawberry Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img922/6178/DM2kcK.png', category: categories[0], price: 5.95},
-        {name: 'Strawberry Layer Mousse Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/2818/IR3Lmj.png', category: categories[0], price: 5.95},
-        {name: 'Strawberry Mousse Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img923/2615/XY6Ee3.png', category: categories[0], price: 5.95},
-
-        {name: 'Tiramisu', size: ['Slice', 'Whole'], availability: true, image:'https://imagizer.imageshack.com/img922/2985/33rnxf.png', category: categories[0], price: 5.95},
-        {name: 'Vanilla Bean Cake', size: ['Slice', 'Whole'], availability: true, image:'https://imagizer.imageshack.com/img924/8545/c1WE8A.png', category: categories[0], price: 5.95},
-        {name: 'Black Forest Cake', size: ['Slice', 'Whole'], availability: true, image: 'https://imagizer.imageshack.com/img924/9839/Zge7tF.png', category: categories[0], price: 5.95},
+        {name: 'Tiramisu', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image:'https://imagizer.imageshack.com/img922/2347/PmMHmg.jpg', category: categories[0], price: 5.95},
+        {name: 'Blueberry Yogurt Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image:'https://imagizer.imageshack.com/img924/6587/oie1wS.jpg', category: categories[0], price: 5.95},
 
         //Cookies 
-        {name: 'Paw Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/4793/iIcMPt.png', category: categories[1], price: 5.95},
+        {name: 'Paw Cookies', availability: false, image: 'https://imagizer.imageshack.com/img922/4793/iIcMPt.png', category: categories[1], price: 5.95},
 
         //Cupcakes
         {name: 'Buttercream Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/2011/kvO5f2.png', category: categories[2], price: 5.95},

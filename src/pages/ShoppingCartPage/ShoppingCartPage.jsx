@@ -4,7 +4,7 @@ import * as itemsAPI from '../../utilities/items-api'
 import NewOrder from '../../components/NewOrder/NewOrder'
 import { useNavigate } from 'react-router-dom';
 
-export default function ShoppingCartPage() {
+export default function ShoppingCartPage({user}) {
     const [cart, setCart] = useState(null);
     const navigate = useNavigate();
 
@@ -35,7 +35,8 @@ export default function ShoppingCartPage() {
     return (
         <>
             <h1 className='page-title'>Shopping Cart</h1>
-            <NewOrder order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} handleRemoveItem={handleRemoveItem} />
+            <NewOrder order={cart} handleChangeQty={handleChangeQty} handleCheckout={handleCheckout} handleRemoveItem={handleRemoveItem} user={user} />
+            <br />
         </>
 
     )

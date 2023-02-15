@@ -1,5 +1,10 @@
-.test{
-    background-color: red;
-    width: 256px;
-    height: 256px;
+.OrderHistory{
+    background-color: white;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1vh;
+
+    border: solid 4px black;
+    border-radius: 10px;
 }

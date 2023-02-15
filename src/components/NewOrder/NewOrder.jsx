@@ -1,7 +1,7 @@
 import './NewOrder.css';
 import LineItem from '../../components/LineItem/LineItem'
 
-export default function NewOrder({ order, handleCheckout, handleChangeQty, handleRemoveItem }) {
+export default function NewOrder({ order, handleCheckout, handleChangeQty, handleRemoveItem, user }) {
     if (!order) return null;
 
     const lineItems = order.lineItems.map(item =>
@@ -20,7 +20,7 @@ export default function NewOrder({ order, handleCheckout, handleChangeQty, handl
                 <div className="lineitem-container">
                     {lineItems.length ?
                         <>
-                            <div id='order-id'>Order#: {order._id}</div>
+                            <div id='order-id'><span>{user.name}'s Cart</span> Order#: {order._id}</div>
                             {lineItems}
                             <section className="total">
                                 <div>
