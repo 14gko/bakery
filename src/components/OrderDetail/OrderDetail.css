@@ -14,3 +14,13 @@ aside > h2{
 .order-img{
     width: 10vw;
 }
+
+.cancel-btn{
+    text-decoration: underline;
+}
+
+.cancel-btn:hover{
+    background-color: var(--blue-3);
+    color: white;
+    text-decoration: none;
+}

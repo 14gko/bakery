@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import {useNavigate} from "react-router-dom";
 import { checkToken } from "../../utilities/users-service"
 import * as ordersAPI from '../../utilities/orders-api'
 import PlacedOrders from '../../components/PlacedOrders/PlacedOrders'
@@ -9,13 +10,13 @@ import './OrderHistoryPage.css'
 export default function OrderHistoryPage() {
     const [orders, setOrders] = useState([]);
     const [activeOrder, setActiveOrder] = useState('');
+    const navigate = useNavigate()
 
     useEffect(function () {
         async function getOrders() {
             const orders = await ordersAPI.getOrders()
             // const selectedOrder = orders.find(order => order.orderId === )
             setOrders(orders);
-            console.log(orders)
             setActiveOrder(orders[0]);
             // console.log('hello world')
             // ordersAPI.getOrders().then(res => console.log(res))

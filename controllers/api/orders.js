@@ -33,9 +33,9 @@ async function removeFromCart(req, res){
 
 async function removeFromOrders(req, res){
   const orders = await Order.find({user: req.user._id })
-  const order = await orders.find(o => o._id.equals(req.params.id))
+  const order = orders.find(o => o._id.equals(req.params.id))
   order.remove()
-  orders.save();
+  // orders.save();
   res.json(orders)
 }
 

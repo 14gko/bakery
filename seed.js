@@ -10,8 +10,8 @@ const Item = require('./models/item');
     const categories = await Category.create([
         {name: 'Cakes', sortOrder: 10},
         {name: 'Cookies', sortOrder: 20},
-        {name: 'Cupcakes', sortOrder: 40},
-        {name: 'Drinks', sortOrder: 30},
+        {name: 'Cupcakes', sortOrder: 30},
+        {name: 'Drinks', sortOrder: 40},
         {name: 'Miscellaneous', sortOrder: 50},
     ]);
 

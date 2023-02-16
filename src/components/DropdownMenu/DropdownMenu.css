@@ -1,0 +1,21 @@
+.cat-li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    list-style: none;
+    color: white;
+    padding: 0;
+    letter-spacing: .2rem;
+
+    cursor: pointer;
+}
+
+.cat-li li:hover{
+    background-color: var(--blue-1);
+    color: white;
+}
+
+.cat-li li{
+    padding: 10px;
+}

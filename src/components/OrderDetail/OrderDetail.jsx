@@ -1,23 +1,24 @@
+import { useEffect } from 'react';
 import './OrderDetail.css'
 
 export default function OrderDetail({ orders, activeOrder, handleRemoveOrder }) {
     const [orderDetails, setOrderDetails] = '';
     const order = orders.filter(order => order.orderId === activeOrder.orderId)
+
     console.log(order)
-    const lineItems = async () => {
-        const order = await order[0].lineItems.map(item => {
-            return (
-                <div>
-                    {item.item.name}
-                    {item.qty}
-                </div>
-            )
-            setOrderDetails(order)
-            // console.log(orderDetails)
-        }
-        )
-    }
-    lineItems().then(items => console.log(items))
+    // const lineItems = async () => {
+    //     const order = await order[0].lineItems.map(item => {
+    //         return (
+    //             <div>
+    //                 {item.item.name}
+    //                 {item.qty}
+    //             </div>
+    //         )
+    //         setOrderDetails(order)
+    //         // console.log(orderDetails)
+    //     }
+    //     )
+    // }
     return (
         <>
             {
@@ -30,7 +31,7 @@ export default function OrderDetail({ orders, activeOrder, handleRemoveOrder }) 
                         <br />
                         <hr />
                         <br />
-                        <div>{lineItems}
+                        <div>
                             {order[0].lineItems.map(item => {
                                 return (
                                     <div className='flex-box'>
@@ -47,7 +48,7 @@ export default function OrderDetail({ orders, activeOrder, handleRemoveOrder }) 
                             <div className='left-align padding-2'>Total Items: {order[0].totalQty} <span className='float-right'>Total Price: ${order[0].orderTotal.toFixed(2)}</span></div>
                             <br />
                             <hr />
-                            <button onClick={() => handleRemoveOrder(order[0]._id)}>cancel?</button>
+                            <button className="cancel-btn" onClick={() => handleRemoveOrder(order[0]._id)}>Cancel Order</button>
                         </div>
                     </>
             }

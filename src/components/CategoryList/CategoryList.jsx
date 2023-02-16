@@ -12,8 +12,10 @@ export default function CategoryList({ categories, activeCat, setActiveCat }) {
     </li>
   );
   return (
-    <ul className="category-list">
-      {cats}
-    </ul>
+    <div className='flex flex-col'>
+      <ul className="category-list flex flex-col gap-4 cat-li">
+        {cats}
+      </ul>
+    </div>
   );
 }

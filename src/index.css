@@ -114,13 +114,13 @@ label {
   color: var(--brown-1);
   border: .1vmin solid var(--blue-3);
   border-radius: .5vmin;
-  background-image: none !important; /* prevent lastpass */
-  /* outline: none;
+  background-image: none !important; 
+   outline: none;
 }  */
 
-/* input:focus {
-  border-color: var(--brown-1);
-} */
+input:focus {
+  border-color: var(--blue-3);
+}
 
 button, a.button {
   color: var(--brown-1);

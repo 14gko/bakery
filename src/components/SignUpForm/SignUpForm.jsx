@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import { useNavigate } from 'react-router-dom';
 
 export default class SignUpForm extends Component {
+
     //class must use render method so we can return the components jsx
 
     // state is always an object with a property for each "piece" of state

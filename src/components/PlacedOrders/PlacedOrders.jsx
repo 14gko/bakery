@@ -2,7 +2,7 @@ import PlacedOrdersItem from '../PlacedOrdersItem/PlacedOrdersItem'
 import './PlacedOrders.css'
 
 export default function PlacedOrders({ orders, activeOrder, setActiveOrder }) {
-    const placedOrdersItem = orders.map((order) =>
+    const placedOrdersItem = orders.map((order) => 
         <PlacedOrdersItem
             order={order}
             isPaid={order.isPaid}

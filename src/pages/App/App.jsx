@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useRef, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service'
+import {gsap} from 'gsap'
 import * as itemsAPI from '../../utilities/items-api'
 import * as ordersAPI from '../../utilities/orders-api'
 import NavBar from '../../components/NavBar/NavBar';
@@ -12,7 +13,6 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import ShoppingCartPage from '../ShoppingCartPage/ShoppingCartPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import { useNavigate} from 'react-router-dom';
-
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <main className="App">
-      <NavBar user={user} setUser={setUser} />
+      <NavBar user={user} setUser={setUser} categories={categoriesRef.current} activeCat={activeCat} setActiveCat={setActiveCat} />
       {user ?
         <>
           <Routes>

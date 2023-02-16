@@ -1,6 +1,6 @@
 .nav-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     /* font-size: .5rem; */
@@ -18,4 +18,115 @@
     text-decoration: none;
     color: white;
     padding: min(1rem, 30vw);
+}
+
+.menu{
+    color: white;
+    cursor: pointer;
+    margin-inline: 3vw;
+}
+
+.nav-menu{
+    margin-left: 0;
+}
+
+.dropdown-li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
+    list-style: none;
+    color: white;
+    padding: 0;
+    letter-spacing: .2rem;
+
+    cursor: pointer;
+}
+
+.dropdown-li li:hover{
+    background-color: var(--blue-1);
+    color: white;
+}
+
+.dropdown-li li{
+    padding: .5rem 1rem;
+    list-style: none;;
+}
+
+.dropdown-cat{
+    position: absolute;
+    top: 2.9rem;
+    left: 9.7vw;
+    width: 15vh;
+    height: 28vh;
+    padding: 15px;
+    background-color: var(--blue-3);
+    border-radius: 0 0 5px 5px;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.dropdown-cat::before{
+    position: absolute;
+    right: 1.1rem;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    transform: translateY(-20px);
+    transition: 0.5s ease;
+    border-left: 1px solid grey;
+    border-top: 1px solid gray;
+}
+
+.dropdown-cat.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.dropdown-cat.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.5s ease;
+}
+
+.dropdown-profile{
+    position: absolute;
+    top: 2.9rem;
+    right: .5vw;
+    width: 10vw;
+    padding: 15px;
+    background-color: var(--blue-3);
+    border-radius: 0 0 5px 5px;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.dropdown-profile::before{
+    position: absolute;
+    right: 1.1rem;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    transform: translateY(-20px);
+    transition: 0.5s ease;
+    border-left: 1px solid grey;
+    border-top: 1px solid gray;
+}
+
+.dropdown-profile.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.dropdown-profile.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.5s ease;
 }
