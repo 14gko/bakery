@@ -33,7 +33,7 @@ export default function ItemPage({menuItems, activeCat, setActiveCat, categories
     // }, []);
 
     return (
-        <main>
+        <main className='item-page'>
             <CategoryList
                 categories={categoriesRef.current}
                 activeCat={activeCat}

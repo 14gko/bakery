@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import * as itemsAPI from '../../utilities/items-api'
 import MenuListItem from '../../components/MenuListItem/MenuListItem'
 import Select from "react-select";
@@ -39,7 +39,7 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
         // console.log('hi', selectedOption)
     }
 
-    // console.log(selectedSize)
+    console.log(selectedSize)
 
     // async function handleAddToOrder(itemId) {
     //     const cart = await ordersAPI.addItemToCart(itemId)
@@ -55,6 +55,7 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
                 <img className="detail-img" src={`${item.image}`} alt="" />
             </div>
             <div className='item-det'>
+                <Link id="back-btn" to='/bakery/items'><i class="bi bi-arrow-left"></i></Link>
                 <h1 className='item-name'>{item.name}</h1>
                 <div className='price-avail'>
                     <div className='space-between'>Price:<span>${item.price}</span></div>
@@ -65,13 +66,15 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
                     }
                 </div>
                 <div>
-                    <form>
-                        {/* {item.category.name === 'Cakes' ?  */}
+                    <form className='detail-form'>
+                        {item.category === 'Cakes' ? 
                         <Select className='form-ele' name="size" options={item.size} onChange={handleChange} />
-                        {/* : */}
-                        <br/>
-                        {/* } */}
-                        <button className='btn-detail' onClick={() => handleAddToOrder(item._id)}>Add To Cart</button>
+                        :
+                        <>
+                        <br /><br />
+                        </>
+                        }
+                        <button className='btn-detail' onClick={() => handleAddToOrder(item._id)}>Add To Cart <i class="bi bi-cart"></i></button>
                     </form>
                 </div>
             </div>

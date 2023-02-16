@@ -18,11 +18,11 @@ export default function NavBar({ user, setUser }) {
         <nav className="nav-container">
             <Link to="/bakery" className="link1">Home</Link>
             <Link to="/bakery/items">Menu</Link>
-            <Link to="/bakery/cart">Shopping Cart</Link>
             <Link to="/bakery/orders">Orders</Link>
             {user ?
                 <>
                     <Link to="" onClick={handleLogOut}>Log Out</Link>
+                    <Link to="/bakery/cart"><i class="bi bi-cart"></i></Link>
                 </>
                 :
                 <>

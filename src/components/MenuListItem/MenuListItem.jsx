@@ -3,7 +3,7 @@ import './MenuListItem.css';
 
 export default function MenuListItem({menuItem, handleAddToOrder}){
     return(
-        <Link to={`/bakery/items/${menuItem._id}`} className="MenuListItem card">
+        <Link to={`/bakery/items/${menuItem._id}`} className="MenuListItem card-menu">
             <div className='image-container'>
                 <img className='card-img-top item-img responsive-img' src={`${menuItem.image}`} alt="" />
             </div>

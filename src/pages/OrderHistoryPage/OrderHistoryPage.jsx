@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { checkToken } from "../../utilities/users-service"
 import * as ordersAPI from '../../utilities/orders-api'
 import PlacedOrders from '../../components/PlacedOrders/PlacedOrders'
@@ -23,13 +23,18 @@ export default function OrderHistoryPage() {
         getOrders()
     }, []);
 
-    async function handleSelectOrder(order){
-        if (order === activeOrder){
+    async function handleSelectOrder(order) {
+        if (order === activeOrder) {
             setActiveOrder(order)
         }
     }
 
-    async function handleCheckToken(){
+    // async function handleRemoveItem(itemId){
+    //     const cart = await ordersAPI.removeItemFromCart(itemId)
+    //     setOrder(cart)
+    // }
+
+    async function handleCheckToken() {
         const expDate = await checkToken();
         console.log(expDate);
     }
@@ -37,11 +42,12 @@ export default function OrderHistoryPage() {
     return (
         <div>
             <h1 className="page-title">Order History</h1>
+            <hr className="margin-btm-0"/>
             <div className='OrderHistory'>
-            <PlacedOrders orders={orders} activeOrder={activeOrder} setActiveOrder={setActiveOrder}/>
-            <aside>
-            <OrderDetail orders={orders} activeOrder={activeOrder}/>
-            </aside>
+                    <PlacedOrders orders={orders} activeOrder={activeOrder} setActiveOrder={setActiveOrder} />
+                <aside className='order-details'>
+                    <OrderDetail orders={orders} activeOrder={activeOrder} />
+                </aside>
             </div>
         </div>
     )

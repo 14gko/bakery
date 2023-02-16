@@ -1,6 +1,7 @@
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
+  --grey-1: rgba(211, 214, 224);
   --blue-1: rgba(35, 57, 93);
   --blue-2: rgba(25, 40, 65);
   --blue-3: rgba(21, 34, 56);
@@ -14,8 +15,12 @@
 }
 
 .page-title{
-  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--blue-3);
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
   margin: 2.5vh 0;
+  font-size: 2.5rem;
+  padding-right: 3vw;
+  font-weight: bolder;
 }
 
 body {
@@ -23,7 +28,7 @@ body {
   font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--blue-3);
+  background-color: white;
   height: 100vh;
   color: var(--blue-3);
 }
@@ -32,7 +37,29 @@ body {
   height: 100%;
 }
 
+.margin-top-5{
+  margin-top: 5vh;
+}
 
+.left-align{
+  text-align: left;
+}
+
+.right-align{
+  text-align: right;
+}
+
+.float-right{
+  float: right;
+}
+
+.padding-2{
+  padding-inline: 2vh;
+}
+
+.width-15vw{
+  width: 15vw;
+}
 
 .scroll-y {
   overflow-y: scroll;

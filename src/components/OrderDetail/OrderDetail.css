@@ -1,0 +1,16 @@
+aside > h2{
+    margin: 3vh;
+    font-weight: bold;
+}
+
+.flex-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 2vw;
+}
+
+.order-img{
+    width: 10vw;
+}

@@ -1,16 +1,16 @@
 .category-list{
     display: flex;
+    flex-direction: column;
+    width: 10vw;
     justify-content: space-evenly
 }
 
 li{
     font-size: 2rem;
-
-    color: black;
     background-color: white;
     padding-inline: 1.5rem;
 
-    border: solid 3px black;
+    border: solid 1px var(--blue-3);
     border-radius: 6px;
 
     list-style: none;
@@ -20,4 +20,6 @@ li{
 li:hover{
     font-weight: bolder;
     box-shadow: 0 0 1.5px black;
+    color: white;
+    background-color: var(--blue-3);
 }

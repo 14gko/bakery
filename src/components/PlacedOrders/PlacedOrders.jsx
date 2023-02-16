@@ -14,7 +14,7 @@ export default function PlacedOrders({ orders, activeOrder, setActiveOrder }) {
     // console.log(activeOrder)
     return (
         <>
-            <div>
+            <div className='order-container'>
             {placedOrdersItem}
             </div>
         </>

@@ -16,12 +16,12 @@ export default function NewOrder({ order, handleCheckout, handleChangeQty, handl
 
     return (
         <div className='new-order'>
-            <div className="lineitem-grid">
+            <div className="margin-inline">
                 <div className="lineitem-container">
                     {lineItems.length ?
                         <>
-                            <div id='order-id'><span>{user.name}'s Cart</span> Order#: {order._id}</div>
-                            {lineItems}
+                            <div id='order-id'><span><i class="bi bi-person"></i> {user.name}'s Cart</span> Order#: {order._id}</div>
+                            <div className='lineItem-grid'>{lineItems}</div>
                             <section className="total">
                                 <div>
                                     Total: ${order.orderTotal.toFixed(2)}
@@ -30,7 +30,7 @@ export default function NewOrder({ order, handleCheckout, handleChangeQty, handl
                                     className='checkout-button right-align'
                                     onClick={handleCheckout}
                                     disabled={!lineItems.length}
-                                >CHECKOUT</button>
+                                >Checkout <i class="bi bi-credit-card"></i></button>
                             </section>
                         </>
                         :

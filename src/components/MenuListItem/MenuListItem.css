@@ -2,31 +2,30 @@
     text-decoration: none;
     color: var(--blue-1);
     width: 30vw;
+    border-radius: 5px;
+    border: solid 1px rgba(21, 34, 56, .3);
 }
 
-/* .card{
+.card-menu{
+    overflow: hidden;
     font-size: 1.3rem;
     color: black;
     background-color: white;
     width: 20rem;
     height: 20rem;
     text-decoration: none;
-
-    border-radius: 3px;
-} */
+} 
 
 .card:hover{
     /* box-shadow: 0px 0px 8px rgb(126, 108, 8); */
 }
 
 .image-container{
-    border-radius: 50%;
-    /* margin: 1rem 4.6rem 1.5rem 4.6rem;
-    width: 100%;
-    height: 100%; */
+    /* border-radius: 5px 5px 0 0; */
+    /* overflow: hidden; */
 }
 
 .item-img{
     object-fit: cover;
-    height: 20vw;
+    height: 25vh;
 }
