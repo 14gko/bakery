@@ -107,7 +107,7 @@ label {
   padding-left: 1vw;
 }
 
-input {
+/* input {
   width: 20vw;
   padding: 1vmin;
   font-size: 2vmin;
@@ -115,8 +115,8 @@ input {
   border: .1vmin solid var(--blue-3);
   border-radius: .5vmin;
   background-image: none !important; /* prevent lastpass */
-  outline: none;
-}
+  /* outline: none;
+}  */
 
 /* input:focus {
   border-color: var(--brown-1);

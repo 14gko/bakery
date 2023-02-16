@@ -6,6 +6,7 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   removeFromCart,
+  removeFromOrders,
   checkout,
   orders,
   // addToOrders,
@@ -28,6 +29,14 @@ async function removeFromCart(req, res){
   const cart = await Order.getCart(req.user._id)
   await cart.removeItemFromCart(req.params.id)
   res.json(cart)
+}
+
+async function removeFromOrders(req, res){
+  const orders = await Order.find({user: req.user._id })
+  const order = await orders.find(o => o._id.equals(req.params.id))
+  order.remove()
+  orders.save();
+  res.json(orders)
 }
 
 // Updates an item's qty in the cart

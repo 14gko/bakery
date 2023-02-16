@@ -29,10 +29,10 @@ export default function OrderHistoryPage() {
         }
     }
 
-    // async function handleRemoveItem(itemId){
-    //     const cart = await ordersAPI.removeItemFromCart(itemId)
-    //     setOrder(cart)
-    // }
+    async function handleRemoveOrder(orderId){
+        const order = await ordersAPI.removeItemFromOrders(orderId)
+        setOrders(order)
+    }
 
     async function handleCheckToken() {
         const expDate = await checkToken();
@@ -46,7 +46,7 @@ export default function OrderHistoryPage() {
             <div className='OrderHistory'>
                     <PlacedOrders orders={orders} activeOrder={activeOrder} setActiveOrder={setActiveOrder} />
                 <aside className='order-details'>
-                    <OrderDetail orders={orders} activeOrder={activeOrder} />
+                    <OrderDetail orders={orders} activeOrder={activeOrder} handleRemoveOrder={handleRemoveOrder}/>
                 </aside>
             </div>
         </div>

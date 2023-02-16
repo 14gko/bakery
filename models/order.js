@@ -68,6 +68,13 @@ orderSchema.methods.removeItemFromCart = async function(itemId){
     return cart.save()
 }
 
+orderSchema.methods.removeFromOrders = async function(orderId){
+    const order = this
+    const ord = order.find(o =>  o._id.equals(orderId))
+    ord.remove()
+    return order.save()
+}
+
 orderSchema.methods.setItemQty = function(itemId, newQty) {
     const cart = this
     const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId))

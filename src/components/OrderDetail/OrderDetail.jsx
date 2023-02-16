@@ -1,6 +1,6 @@
 import './OrderDetail.css'
 
-export default function OrderDetail({ orders, activeOrder }) {
+export default function OrderDetail({ orders, activeOrder, handleRemoveOrder }) {
     const [orderDetails, setOrderDetails] = '';
     const order = orders.filter(order => order.orderId === activeOrder.orderId)
     console.log(order)
@@ -17,7 +17,6 @@ export default function OrderDetail({ orders, activeOrder }) {
         }
         )
     }
-
     lineItems().then(items => console.log(items))
     return (
         <>
@@ -48,6 +47,7 @@ export default function OrderDetail({ orders, activeOrder }) {
                             <div className='left-align padding-2'>Total Items: {order[0].totalQty} <span className='float-right'>Total Price: ${order[0].orderTotal.toFixed(2)}</span></div>
                             <br />
                             <hr />
+                            <button onClick={() => handleRemoveOrder(order[0]._id)}>cancel?</button>
                         </div>
                     </>
             }

@@ -1,0 +1,10 @@
+.home-page{
+    background-image: url(https://imagizer.imageshack.com/img923/9448/Ku9N6D.png);
+    background-size: cover;
+    height: 63vh;
+
+    color: white;
+    font-weight: bolder;
+    font-size: 5rem;
+    padding-top: 22vh;
+}
