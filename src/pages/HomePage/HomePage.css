@@ -1,5 +1,5 @@
 .home-page{
-    background-image: url(https://imagizer.imageshack.com/img923/9448/Ku9N6D.png);
+    background-image: linear-gradient(rgba(21, 34, 56, .2), rgba(21, 34, 56, .9)),  url(https://imagizer.imageshack.com/img923/9448/Ku9N6D.png);
     background-size: cover;
     height: 63vh;
 
@@ -7,4 +7,12 @@
     font-weight: bolder;
     font-size: 5rem;
     padding-top: 22vh;
+}
+
+.home-text{
+    margin: 9vh 25vw;
+    font-size: 2rem;
+    font-weight: 0;
+    width: 50vw;
+    font-weight: bold;
 }

@@ -3,3 +3,53 @@
     grid-template-columns: 1fr 11fr;
     height: 80vh;
 }
+
+.search-container{
+    width: 100%;
+    padding: 1%;
+}
+
+.search-bar{
+    width: 100%;
+    max-width: 30vw;
+    height: 5vh;
+    background: rgba(21, 34, 56, .3);
+    margin-inline: 36vw;
+
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 10px;
+    backdrop-filter: blur(4px) saturate(180%)
+}
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 1vh 1vh;
+    font-size: 20px;
+    color: white;
+}
+
+.search-bar button i{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    left: 1vh;
+}
+
+.search-bar .search-btn{
+    background: transparent;
+    /* border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: rgba(255,255,255, .2); */
+}
+
+::placeholder{
+    color: white;
+}

@@ -9,8 +9,8 @@ const Item = require('./models/item');
     await Category.deleteMany({});
     const categories = await Category.create([
         {name: 'Cakes', sortOrder: 10},
-        {name: 'Cookies', sortOrder: 20},
-        {name: 'Cupcakes', sortOrder: 30},
+        {name: 'Cupcakes', sortOrder: 20},
+        {name: 'Cookies', sortOrder: 30},
         {name: 'Drinks', sortOrder: 40},
         {name: 'Miscellaneous', sortOrder: 50},
     ]);
@@ -21,41 +21,53 @@ const Item = require('./models/item');
         {name: 'Chocolate Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/9853/bTSP0i.jpg', category: categories[0], price: 5.95},
         {name: 'Chocolate Cream Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img923/9716/EMaYq3.png', category: categories[0], price: 5.95},
         {name: 'Espresso Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/7430/wEU1Kl.jpg', category: categories[0], price: 5.95},
+        {name: 'Mango Mousse Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img922/901/JZ5eYA.png', category: categories[0], price: 5.95},
 
-        {name: 'Fresh Cream Fruit Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img922/8030/BtPoeE.jpg', category: categories[0], price: 5.95},
-        {name: 'Green Tea Chiffon Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/7955/bOmSs9.jpg', category: categories[0], price: 5.95},
+        {name: 'Fresh Cream Fruit Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img922/7184/ru6Wr4.jpg', category: categories[0], price: 5.95},
+        {name: 'Green Tea Chiffon Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img923/8754/xtnm6N.jpg', category: categories[0], price: 5.95},
+        {name: 'Green Tea Blueberry Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img924/8457/O2019Y.jpg', category: categories[0], price: 5.95},
+        {name: 'Sweet Potato Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image: 'https://imagizer.imageshack.com/img922/7104/pNwjIU.jpg', category: categories[0], price: 5.95},
         
         {name: 'Tiramisu', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image:'https://imagizer.imageshack.com/img922/2347/PmMHmg.jpg', category: categories[0], price: 5.95},
-        {name: 'Blueberry Yogurt Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image:'https://imagizer.imageshack.com/img924/6587/oie1wS.jpg', category: categories[0], price: 5.95},
+        {name: 'Blueberry Yogurt Cake', size: [{value: 'slice', label: 'Slice'}, {value:'whole', label:'Whole'}], availability: true, image:'https://imagizer.imageshack.com/img922/9796/OfufTj.jpg', category: categories[0], price: 5.95},
+        
+        //Cupcakes
+        {name: 'Mint Choco Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/2347/SiJtCG.jpg', category: categories[1], price: 5.95},
+        {name: 'Nutella Raspberry Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/5461/QInbtx.jpg', category: categories[1], price: 5.95},
+        {name: 'Cinderella Buttercream Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/4235/JvFzj7.jpg', category: categories[1], price: 5.95},
+        {name: 'Fresh Fruit Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/3217/c0EgUG.jpg', category: categories[1], price: 5.95},
+        {name: 'Butterscotch Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/4674/3XAi0a.jpg', category: categories[1], price: 5.95},
+        {name: 'Chocolate Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img922/7186/sDkDVW.jpg', category: categories[1], price: 5.95},
+        
+        {name: 'Citrus Lemon Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/6779/JjRB0b.png', category: categories[1], price: 5.95},
+        {name: 'Orange Citrus Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/124/Gt9Lhb.png', category: categories[1], price: 5.95},
+        {name: 'Buttercream Pecan Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/7197/2uJPOS.png', category: categories[1], price: 5.95},
+        
+        {name: 'Strawberry ShortCake Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/1157/6VJCUD.png', category: categories[1], price: 5.95},
 
         //Cookies 
-        {name: 'Paw Cookies', availability: false, image: 'https://imagizer.imageshack.com/img922/4793/iIcMPt.png', category: categories[1], price: 5.95},
 
-        //Cupcakes
-        {name: 'Buttercream Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/2011/kvO5f2.png', category: categories[2], price: 5.95},
-        {name: 'Birthday Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/2008/Pgfhov.png', category: categories[2], price: 5.95},
-        {name: 'Carrot Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/2924/Y7fJ3y.png', category: categories[2], price: 5.95},
-        {name: 'Lemon Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img922/390/2BS3td.png', category: categories[2], price: 5.95},
-        {name: 'Matcha Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/9803/aZYRWs.png', category: categories[2], price: 5.95},
+        {name: 'Dog and Bone Sugar Cookies', availability: true, image: 'https://imagizer.imageshack.com/img924/6880/4fsD5U.png', category: categories[2], price: 5.95},
+        {name: 'Fried Chicken Sugar Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/3183/QNT3eH.jpg', category: categories[2], price: 5.95},
+        {name: 'Chick Lemon Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/3421/qS6cmH.png', category: categories[2], price: 5.95},
+        {name: 'Frog Matcha Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/4606/1lojed.jpg', category: categories[2], price: 5.95},
+
         
-        {name: 'Mint Choco Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img924/4168/kRh0mC.png', category: categories[2], price: 5.95},
-        {name: 'Nutella Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/4466/etue3c.png', category: categories[2], price: 5.95},
-        {name: 'Peppermint Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img922/1219/BFJ1ll.png', category: categories[2], price: 5.95},
-        {name: 'Red Velvet Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img923/9438/CNWdmd.png', category: categories[2], price: 5.95},
-        {name: 'Strawberry ShortCake Cupcake', availability: true, image: 'https://imagizer.imageshack.com/img922/5660/1OleEh.png', category: categories[2], price: 5.95},
-
         //Drinks
-        {name: 'Coffee Bubble Tea', availability: true, image: 'https://imagizer.imageshack.com/img923/7199/p02tF7.png', category: categories[3], price: 5.95},
-        {name: 'Matcha Bubble Milk Tea', availability: true, image: 'https://imagizer.imageshack.com/img922/2325/9yUL2b.png', category: categories[3], price: 5.95},
-        {name: 'Black Bubble Milk Tea', availability: true, image: 'https://imagizer.imageshack.com/img924/4181/dofXRs.png', category: categories[3], price: 5.95},
-        {name: 'Strawberry Bubble Milk Tea', availability: true, image: 'https://imagizer.imageshack.com/img923/7281/G2tkur.png', category: categories[3], price: 5.95},
-        {name: 'Taro Bubble Milk Tea', availability: true, image: 'https://imagizer.imageshack.com/img922/5057/ZxZzmp.png', category: categories[3], price: 5.95},
-
+        {name: 'Hot Chocolate', availability: true, image: 'https://imagizer.imageshack.com/img924/8858/1NHo0I.png', category: categories[3], price: 5.95},
+        {name: 'Black Coffee', availability: true, image: 'https://imagizer.imageshack.com/img923/7340/btkBDg.jpg', category: categories[3], price: 5.95},
+        {name: 'Cafe Latte', availability: true, image: 'https://imagizer.imageshack.com/img923/9828/6VNKnO.jpg', category: categories[3], price: 5.95},
+        {name: 'Cappuccino', availability: true, image: 'https://imagizer.imageshack.com/img923/7536/E0bu0Y.jpg', category: categories[3], price: 5.95},
+        {name: 'Matcha Latte', availability: true, image: 'https://imagizer.imageshack.com/img924/2963/9VJ554.jpg', category: categories[3], price: 5.95},
+        
         //misc
-        {name: 'Coconut Paradise Parfait', availability: true, image: 'https://imagizer.imageshack.com/img924/7714/rQhh0E.png', category: categories[4], price: 5.95},
-        {name: 'Honeydew Cantaloupe Parfait', availability: true, image: 'https://imagizer.imageshack.com/img923/4505/9xXDVQ.png', category: categories[4], price: 5.95},
-        {name: 'Birthday Cake Parfait', availability: true, image: 'https://imagizer.imageshack.com/img922/3769/swqE73.png', category: categories[4], price: 5.95},
-
+        {name: 'Mochi Donut', availability: true, image: 'https://imagizer.imageshack.com/img923/8262/yKxM6v.png', category: categories[4], price: 5.95},
+        {name: 'Fruit Tart', availability: true, image: 'https://imagizer.imageshack.com/img924/8259/EzL6G4.jpg', category: categories[4], price: 5.95},
+        {name: 'Bear Macarons', availability: true, image: 'https://imagizer.imageshack.com/img922/4595/xvvji8.png', category: categories[4], price: 5.95},
+        {name: 'Frog Macarons', availability: true, image: 'https://imagizer.imageshack.com/img923/8923/fGrXq9.png', category: categories[4], price: 5.95},
+        {name: 'Croffle', availability: true, image: 'https://imagizer.imageshack.com/img924/155/7RR9pb.png', category: categories[4], price: 5.95},
+        {name: 'Chocolate Crossiant', availability: true, image: 'https://imagizer.imageshack.com/img924/9116/jzi52i.jpg', category: categories[4], price: 5.95},
+        
     ])
     console.log(items)
     process.exit();

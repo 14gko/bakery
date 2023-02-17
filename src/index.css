@@ -78,6 +78,26 @@ body {
   font-size: 2vmin;
 }
 
+.auth-page > h1 {
+  color: white;
+  padding: 2vh;
+}
+
+.auth-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.auth-btn{
+  grid-column: span 2;
+}
+
+.auth-btn:hover{
+  background-color: var(--blue-3);
+  color: white;
+}
+
 .form-container {
   margin-inline: 31.5vw;
   width: 35vw;
@@ -92,6 +112,7 @@ p.error-message {
   font-size: 2rem;
   margin-bottom: 0;
   margin-top: 1rem;
+  color: white;
 }
 
 

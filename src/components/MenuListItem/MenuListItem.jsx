@@ -9,7 +9,6 @@ export default function MenuListItem({menuItem, handleAddToOrder}){
             </div>
             <div className="card-title">{menuItem.name}</div>
             <div className="card-text">Price: ${menuItem.price}</div>
-            {/* <button onClick={() => handleAddToOrder(menuItem._id)}>ADD</button> */}
         </Link>
     );
 }

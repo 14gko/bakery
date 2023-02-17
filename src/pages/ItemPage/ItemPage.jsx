@@ -42,8 +42,13 @@ export default function ItemPage({ menuItems, activeCat, setActiveCat, categorie
 
     return (
         <>
-            <label>Search: </label>
-            <input type="text" onChange={e => setQuery(e.target.value)}/>
+            <div className='search-container'>
+                <form className='search-bar'>
+                    <input type="text" placeholder={`Search in ${activeCat}`} onChange={e => setQuery(e.target.value)} />
+                    <button className="search-btn" type="submit"><i class="bi bi-search-heart"></i></button>
+                </form>
+            </div>
+
             <main className='item-page'>
                 <CategoryList
                     categories={categoriesRef.current}

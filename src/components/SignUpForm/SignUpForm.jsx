@@ -53,7 +53,7 @@ export default class SignUpForm extends Component {
         return (
             <div className='outer-container'>
                 <div className="form-container">
-                    <form autoComplete="off" onSubmit={this.handleSubmit}>
+                    <form className="auth-form" autoComplete="off" onSubmit={this.handleSubmit}>
                         <label>Name</label>
                         <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
                         <label>Email</label>
@@ -62,7 +62,7 @@ export default class SignUpForm extends Component {
                         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
                         <label>Confirm</label>
                         <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-                        <button type="submit" disabled={disable}>SIGN UP</button>
+                        <button className="auth-btn" type="submit" disabled={disable}>SIGN UP</button>
                     </form>
                 </div>
                 <p className="error-message">&nbsp;{this.state.error}</p>
