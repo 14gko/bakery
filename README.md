@@ -18,8 +18,6 @@ A website constructed for a bakery business that allows users to view and buy pr
 - HTML
 - CSS
 
-<hr>
-
 # Getting Started:
 
 ### Deployed App: https://graces-bakery.herokuapp.com/
