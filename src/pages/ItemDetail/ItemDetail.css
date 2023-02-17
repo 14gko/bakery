@@ -94,6 +94,20 @@
     cursor: pointer;
 }
 
+.btn-inactive{
+    font-size: 1.2rem;
+    font-family: var(--main-font);
+    font-weight: bold;
+    color: var(--grey-1);
+
+    vertical-align: center;
+    padding: .2rem .5rem;
+    border: solid 1px var(--grey-1);
+    border-radius: 5px;
+
+    cursor: not-allowed;
+}
+
 .btn-detail:hover{
     background-color: var(--blue-1);
     color: white;

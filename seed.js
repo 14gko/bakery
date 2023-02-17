@@ -49,7 +49,7 @@ const Item = require('./models/item');
 
         {name: 'Dog and Bone Sugar Cookies', availability: true, image: 'https://imagizer.imageshack.com/img924/6880/4fsD5U.png', category: categories[2], price: 2.15},
         {name: 'Fried Chicken Sugar Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/3183/QNT3eH.jpg', category: categories[2], price: 2.75},
-        {name: 'Chick Lemon Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/3421/qS6cmH.png', category: categories[2], price: 2.65},
+        {name: 'Chick Lemon Cookies', availability: false, image: 'https://imagizer.imageshack.com/img922/3421/qS6cmH.png', category: categories[2], price: 2.65},
         {name: 'Frog Matcha Cookies', availability: true, image: 'https://imagizer.imageshack.com/img922/4606/1lojed.jpg', category: categories[2], price: 2.65},
 
         

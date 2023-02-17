@@ -36,7 +36,6 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
     // }
     const handleChange = (selectedOption) => {
         setSelectedSize(selectedOption)
-        // console.log('hi', selectedOption)
     }
     // async function handleAddToOrder(itemId) {
     //     const cart = await ordersAPI.addItemToCart(itemId)
@@ -57,21 +56,27 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
                 <div className='price-avail'>
                     <div className='space-between'>Price:<span>${item.price}</span></div>
                     {item.availability ?
-                        <div className='space-between'>Availability: <span>In Stock</span></div>
+                        <>
+                            <div className='space-between'>Availability: <span>In Stock</span></div>
+                        </>
                         :
                         <div className='space-between'>Availability: <span>Out of Stock</span></div>
                     }
                 </div>
                 <div>
                     <form className='detail-form'>
-                        {item.category === 'Cakes' ? 
-                        <Select className='form-ele' name="size" options={item.size} onChange={handleChange} />
-                        :
-                        <>
-                        <br /><br />
-                        </>
+                        {item.category === 'Cakes' ?
+                            <Select className='form-ele' name="size" options={item.size} onChange={handleChange} />
+                            :
+                            <>
+                                <br /><br />
+                            </>
                         }
+                        {item.availability ?  
                         <button className='btn-detail' onClick={() => handleAddToOrder(item._id)}>Add To Cart <i class="bi bi-cart"></i></button>
+                        :
+                        <span className='btn-inactive'>Currently Unavailable</span>
+                    }
                     </form>
                 </div>
             </div>
