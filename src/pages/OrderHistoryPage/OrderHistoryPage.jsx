@@ -33,6 +33,7 @@ export default function OrderHistoryPage() {
     async function handleRemoveOrder(orderId){
         const order = await ordersAPI.removeItemFromOrders(orderId)
         setOrders(order)
+        navigate('/bakery/orders')
     }
 
     async function handleCheckToken() {

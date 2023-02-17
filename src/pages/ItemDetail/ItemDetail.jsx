@@ -38,9 +38,6 @@ export default function ItemDetail({ menuItems, handleAddToOrder }) {
         setSelectedSize(selectedOption)
         // console.log('hi', selectedOption)
     }
-
-    console.log(selectedSize)
-
     // async function handleAddToOrder(itemId) {
     //     const cart = await ordersAPI.addItemToCart(itemId)
     //     setCart(cart)

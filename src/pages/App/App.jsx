@@ -43,7 +43,7 @@ export default function App() {
   async function handleAddToOrder(itemId, selectedSize) {
     const cart = await ordersAPI.addItemToCart(itemId, selectedSize)
     setCart(cart)
-    navigate('/bakery/cart');
+    // navigate('/bakery/cart');
   }
 
   //ask why my placedorder page isnt working
