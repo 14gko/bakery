@@ -6,6 +6,9 @@ A website constructed for a bakery business that allows users to view and buy pr
 
 # Screenshots
 
+![download](https://user-images.githubusercontent.com/117627213/219547801-a256be9f-6fd4-4f0d-bcd7-5d1e4241ea08.png)
+![download](https://user-images.githubusercontent.com/117627213/219547788-46bb07cf-4216-421b-9911-45ee7949fc74.png)
+
 # Technologies Used:
 
 - Reactjs
