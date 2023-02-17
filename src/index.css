@@ -87,9 +87,22 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  color: var(--blue-1)
+}
+
+.auth-form input{
+  color: var(--blue-1);
+  border: solid 1px var(--blue-1);
+  border-radius: 3px;
+}
+
+.auth-form input:focus {
+  border-color: var(--blue-1);
+  border: none;
 }
 
 .auth-btn{
+  color: var(--blue-1);
   grid-column: span 2;
 }
 
@@ -102,7 +115,7 @@ body {
   margin-inline: 31.5vw;
   width: 35vw;
   padding: 3vmin;
-  background-color: white;
+  background-color: rgba(255, 255, 255);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
@@ -139,12 +152,7 @@ label {
    outline: none;
 }  */
 
-input:focus {
-  border-color: var(--blue-3);
-}
-
 button, a.button {
-  color: var(--brown-1);
   background-color: white;
   margin: 1vmin;
   padding: 1vmin;
